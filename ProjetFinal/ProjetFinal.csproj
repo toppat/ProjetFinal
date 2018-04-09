@@ -196,11 +196,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Administrateur.cs" />
     <Compile Include="Models\Clavier.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Commande.cs" />
     <Compile Include="Models\Ecran.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\CompteUtilisateur.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\OrdiBureau.cs" />
