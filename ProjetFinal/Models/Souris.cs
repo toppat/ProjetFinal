@@ -7,5 +7,6 @@ namespace ProjetFinal.Models
 {
     public class Souris : Item
     {
+
     }
 }
