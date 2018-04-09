@@ -7,5 +7,12 @@ namespace ProjetFinal.Models
 {
     public class Item
     {
+
+    }
+
+    public enum TypeItem
+    {
+        Ordinateur,
+        Accessoire
     }
 }
