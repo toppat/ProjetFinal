@@ -5,7 +5,8 @@ using System.Web;
 
 namespace ProjetFinal.Models
 {
-    public class Clavier
+    public class Clavier : Item
     {
+
     }
 }

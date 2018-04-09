@@ -5,7 +5,8 @@ using System.Web;
 
 namespace ProjetFinal.Models
 {
-    public class Ecran
+    public class Ecran : Item
     {
+
     }
 }
