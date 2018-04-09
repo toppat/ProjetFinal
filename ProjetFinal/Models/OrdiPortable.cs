@@ -19,6 +19,10 @@ namespace ProjetFinal.Models
             quatorze,
             [Description("15 pouces")]
             quinze,
+            [Description("15.4 pouces")]
+            quinzeQuatre,
+            [Description("15.6 pouces")]
+            quinzeSix,
             [Description("17 pouces")]
             dixSept
         }

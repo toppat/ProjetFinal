@@ -10,12 +10,14 @@ namespace ProjetFinal.Models
     {
         //Recherche des variables
         [Required]
-        public int memoire { get; set; }
-        [Required]
-        public float processeur { get; set; }
-        [Required]
-        public String carteGraphique { get; set; }
+        public int Memoire { get; set; }
 
-        
+        [Required]
+        public float Processeur { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        [Display(Name = "Carte Graphique")]
+        public String CarteGraphique { get; set; }
     }
 }
