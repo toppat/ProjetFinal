@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjetFinal.Models
 {
-    public class Ordinateur
+    public class Ordinateur : Item
     {
 
     }

@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ProjetFinal.Models
 {
-    public class OrdiPortable
+    public class OrdiPortable : Ordinateur
     {
     }
 }
