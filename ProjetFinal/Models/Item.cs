@@ -13,16 +13,16 @@ namespace ProjetFinal.Models
 
         [Required]
         [Range(0, double.PositiveInfinity)]
-        [Display(Name = "Prix")]
+        [Display(Name = "Le prix")]
         public decimal Prix { get; set; }
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "Nom")]
+        [Display(Name = "Nom de l'item")]
         public String Nom { get; set; }
 
         [StringLength(200)]
-        [Display(Name = "Description")]
+        [Display(Name = "La description")]
         public String Description { get; set; }
     }
 

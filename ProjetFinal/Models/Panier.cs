@@ -11,10 +11,10 @@ namespace ProjetFinal.Models
         [Display(Name = "ID")]
         public int Id { get; set; }
 
-        [Display(Name = "Items")]
+        [Display(Name = "Liste d'items")]
         public virtual List<Item> Items { get; set; }
 
-        [Display(Name = "Total")]
+        [Display(Name = "Le total")]
         public decimal Total { get; set; }
     }
 }

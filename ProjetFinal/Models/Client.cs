@@ -8,9 +8,10 @@ namespace ProjetFinal.Models
 {
     public class Client : CompteUtilisateur
     {
+        [Display(Name = "Votre panier")]
         public virtual Panier Panier { get; set; }
 
-        [Display(Name = "Hystorique Commande")]
+        [Display(Name = "Hystorique des Commande")]
         public virtual List<Commande> Commandes { get; set; }
     }
 }
