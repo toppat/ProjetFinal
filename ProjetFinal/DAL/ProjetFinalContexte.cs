@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ProjetFinal.DAL
 {
-    public class Contexte : DbContext
+    public class ProjetFinalContexte : DbContext
     {
         public DbSet<Item> Items { get; set; }
         public DbSet<Client> Clients { get; set; }

@@ -7,6 +7,16 @@ namespace ProjetFinal.Models
 {
     public class Souris : Item
     {
-
+        public enum Categorie
+        {
+            [Description("Avec Fil")]
+            avecFil,
+            [Description("Sans Fil")]
+            sansFil,
+            [Description("De Jeu")]
+            deJeu,
+            [Description("Ergonomique")]
+            ergonomique
+        }
     }
 }
