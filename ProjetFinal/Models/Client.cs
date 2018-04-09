@@ -8,6 +8,7 @@ namespace ProjetFinal.Models
 {
     public class Client : CompteUtilisateur
     {
+
         [Display(Name = "Hystorique Commande")]
         public virtual List<Commande> Commandes { get; set; }
     }
