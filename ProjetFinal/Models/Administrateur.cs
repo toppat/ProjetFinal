@@ -8,7 +8,7 @@ namespace ProjetFinal.Models
 {
     public class Administrateur : CompteUtilisateur
     {
-        [Display(Name = "Hystorique")]
-        public virtual List<String> Hystorique { get; set; }
+        [Display(Name = "Historique")]
+        public virtual List<String> Historique { get; set; }
     }
 }

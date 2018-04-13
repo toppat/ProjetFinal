@@ -11,7 +11,7 @@ namespace ProjetFinal.Models
         [Display(Name = "Votre panier")]
         public virtual Panier Panier { get; set; }
 
-        [Display(Name = "Hystorique des Commande")]
+        [Display(Name = "Historique des Commande")]
         public virtual List<Commande> Commandes { get; set; }
     }
 }
