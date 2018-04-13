@@ -19,5 +19,10 @@ namespace ProjetFinal.Models
         [StringLength(50)]
         [Display(Name = "Carte Graphique")]
         public String CarteGraphique { get; set; }
+
+        public Ordinateur()
+        {
+            this.categorie = TypeItem.Ordinateur;
+        }
     }
 }

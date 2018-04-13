@@ -19,5 +19,9 @@ namespace ProjetFinal.Models
             [Description("Ergonomique")]
             ergonomique
         }
+        public Souris()
+        {
+            this.categorie = TypeItem.Accessoire;
+        }
     }
 }

@@ -23,5 +23,9 @@ namespace ProjetFinal.Models
             [Description("24 pouces")]
             vingtQuatre,
         }
+        public Ecran()
+        {
+            this.categorie = TypeItem.Accessoire;
+        }
     }
 }

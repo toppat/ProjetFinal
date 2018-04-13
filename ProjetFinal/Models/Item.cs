@@ -8,6 +8,8 @@ namespace ProjetFinal.Models
 {
     public class Item
     {
+        TypeItem categorie { get; set; }
+
         [Display(Name = "ID")]
         public int Id { get; set; }
 
