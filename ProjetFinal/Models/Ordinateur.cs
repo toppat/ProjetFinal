@@ -22,7 +22,7 @@ namespace ProjetFinal.Models
 
         public Ordinateur()
         {
-            this.Categorie = TypeItem.Ordinateur;
+            this.TypeCatego = TypeItem.Ordinateur;
         }
     }
 }

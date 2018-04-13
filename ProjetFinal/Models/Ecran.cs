@@ -25,7 +25,7 @@ namespace ProjetFinal.Models
         }
         public Ecran()
         {
-            this.categorie = TypeItem.Accessoire;
+            this.TypeCatego = TypeItem.Accessoire;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace ProjetFinal.Models
         }
         public Souris()
         {
-            this.categorie = TypeItem.Accessoire;
+            this.TypeCatego = TypeItem.Accessoire;
         }
     }
 }

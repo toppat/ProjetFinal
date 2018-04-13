@@ -21,7 +21,7 @@ namespace ProjetFinal.Models
         }
         public Clavier()
         {
-            this.categorie = TypeItem.Accessoire;
+            this.TypeCatego = TypeItem.Accessoire;
         }
     }
 }
