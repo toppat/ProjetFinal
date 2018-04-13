@@ -16,7 +16,7 @@ namespace ProjetFinal.DAL
         public DbSet<Panier> Paniers { get; set; }
         public DbSet<Ordinateur> Ordinateurs { get; set; }
         public DbSet<OrdiPortable> OrdiPortables { get; set; }
-        public DbSet<OrdiBureau> OrdiBureaus { get; set; }
+        public DbSet<OrdiBureau> OrdiBureaux { get; set; }
         public DbSet<Ecran> Ecrans { get; set; }
         public DbSet<Souris> Souris { get; set; }
         public DbSet<Clavier> Claviers { get; set; }

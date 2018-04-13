@@ -198,17 +198,20 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministrateursController.cs" />
+    <Compile Include="Controllers\ClaviersController.cs" />
+    <Compile Include="Controllers\ClientsController.cs" />
+    <Compile Include="Controllers\EcransController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ItemsController.cs" />
+    <Compile Include="Controllers\OrdiBureauxController.cs" />
+    <Compile Include="Controllers\OrdiPortablesController.cs" />
+    <Compile Include="Controllers\SourisController.cs" />
     <Compile Include="DAL\ProjetFinalContexte.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Administrateur.cs" />
     <Compile Include="Models\Clavier.cs" />
     <Compile Include="Models\Client.cs" />
@@ -223,7 +226,6 @@
     <Compile Include="Models\Panier.cs" />
     <Compile Include="Models\Souris.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -299,24 +301,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
@@ -330,6 +314,56 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Items\Create.cshtml" />
+    <Content Include="Views\Items\Delete.cshtml" />
+    <Content Include="Views\Items\Details.cshtml" />
+    <Content Include="Views\Items\Edit.cshtml" />
+    <Content Include="Views\Items\Index.cshtml" />
+    <Content Include="Views\Claviers\Create.cshtml" />
+    <Content Include="Views\Claviers\Delete.cshtml" />
+    <Content Include="Views\Claviers\Details.cshtml" />
+    <Content Include="Views\Claviers\Edit.cshtml" />
+    <Content Include="Views\Claviers\Index.cshtml" />
+    <Content Include="Views\Paniers\Create.cshtml" />
+    <Content Include="Views\Paniers\Delete.cshtml" />
+    <Content Include="Views\Paniers\Details.cshtml" />
+    <Content Include="Views\Paniers\Edit.cshtml" />
+    <Content Include="Views\Paniers\Index.cshtml" />
+    <Content Include="Views\Ordinateurs\Create.cshtml" />
+    <Content Include="Views\Ordinateurs\Delete.cshtml" />
+    <Content Include="Views\Ordinateurs\Details.cshtml" />
+    <Content Include="Views\Ordinateurs\Edit.cshtml" />
+    <Content Include="Views\Ordinateurs\Index.cshtml" />
+    <Content Include="Views\OrdiBureaux\Create.cshtml" />
+    <Content Include="Views\OrdiBureaux\Delete.cshtml" />
+    <Content Include="Views\OrdiBureaux\Details.cshtml" />
+    <Content Include="Views\OrdiBureaux\Edit.cshtml" />
+    <Content Include="Views\OrdiBureaux\Index.cshtml" />
+    <Content Include="Views\OrdiPortables\Create.cshtml" />
+    <Content Include="Views\OrdiPortables\Delete.cshtml" />
+    <Content Include="Views\OrdiPortables\Details.cshtml" />
+    <Content Include="Views\OrdiPortables\Edit.cshtml" />
+    <Content Include="Views\OrdiPortables\Index.cshtml" />
+    <Content Include="Views\Souris\Create.cshtml" />
+    <Content Include="Views\Souris\Delete.cshtml" />
+    <Content Include="Views\Souris\Details.cshtml" />
+    <Content Include="Views\Souris\Edit.cshtml" />
+    <Content Include="Views\Souris\Index.cshtml" />
+    <Content Include="Views\Ecrans\Create.cshtml" />
+    <Content Include="Views\Ecrans\Delete.cshtml" />
+    <Content Include="Views\Ecrans\Details.cshtml" />
+    <Content Include="Views\Ecrans\Edit.cshtml" />
+    <Content Include="Views\Ecrans\Index.cshtml" />
+    <Content Include="Views\Clients\Create.cshtml" />
+    <Content Include="Views\Clients\Delete.cshtml" />
+    <Content Include="Views\Clients\Details.cshtml" />
+    <Content Include="Views\Clients\Edit.cshtml" />
+    <Content Include="Views\Clients\Index.cshtml" />
+    <Content Include="Views\Administrateurs\Create.cshtml" />
+    <Content Include="Views\Administrateurs\Delete.cshtml" />
+    <Content Include="Views\Administrateurs\Details.cshtml" />
+    <Content Include="Views\Administrateurs\Edit.cshtml" />
+    <Content Include="Views\Administrateurs\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
