@@ -35,5 +35,10 @@ namespace ProjetFinal.Models
             [Description("Mini ITX")]
             miniITX
         }
+
+        public OrdiBureau()
+        {
+            base();
+        }
     }
 }

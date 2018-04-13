@@ -26,5 +26,10 @@ namespace ProjetFinal.Models
             [Description("17 pouces")]
             dixSept
         }
+
+        public OrdiPortable()
+        {
+            base();
+        }
     }
 }
