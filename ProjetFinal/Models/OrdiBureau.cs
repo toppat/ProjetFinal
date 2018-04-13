@@ -36,9 +36,6 @@ namespace ProjetFinal.Models
             miniITX
         }
 
-        public OrdiBureau()
-        {
-            base();
-        }
+        public OrdiBureau() : base() { }
     }
 }

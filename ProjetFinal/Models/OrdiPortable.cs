@@ -27,9 +27,6 @@ namespace ProjetFinal.Models
             dixSept
         }
 
-        public OrdiPortable()
-        {
-            base();
-        }
+        public OrdiPortable() : base() { }
     }
 }
