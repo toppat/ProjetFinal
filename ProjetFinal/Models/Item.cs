@@ -8,6 +8,7 @@ namespace ProjetFinal.Models
 {
     public class Item
     {
+        [Display(Name = "Categorie")]
         public TypeItem TypeCatego { get; set; }
 
         [Display(Name = "ID")]
