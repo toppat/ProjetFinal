@@ -1,4 +1,5 @@
-﻿@model IEnumerable<ProjetFinal.Models.Item>
+﻿@using ProjetFinal.Models;
+@model IEnumerable<ProjetFinal.Models.Item>
 
 @{
     ViewBag.Title = "Index";
@@ -27,6 +28,17 @@
     </tr>
 
 @foreach (var item in Model) {
+    String nomControleur = item.GetType().Name ;
+    if (nomControleur == typeof(OrdiBureau).Name)
+    {
+        nomControleur += "x";
+    }
+    else if (nomControleur != typeof(Souris).Name)
+    {
+        nomControleur += "s";
+    }
+
+
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.TypeCatego)
@@ -41,8 +53,8 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Edit", "Edit", nomControleur, new { id=item.Id }, null) |
+            @Html.ActionLink("Details", "Details", nomControleur, new { id=item.Id }, null) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

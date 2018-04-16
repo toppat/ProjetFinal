@@ -59,7 +59,7 @@ namespace ProjetFinal.Controllers
             return View(item);
         }
 
-        // GET: Items/Edit/5
+        // GET: Items/Edit/5                           
         public ActionResult Edit(int? id)
         {
             if (id == null)
