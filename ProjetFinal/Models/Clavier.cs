@@ -8,7 +8,9 @@ namespace ProjetFinal.Models
 {
     public class Clavier : Item
     {
-        public enum Categorie
+        public CategorieClavier Type { get; set; }
+
+        public enum CategorieClavier
         {
             [Description("Avec Fil")]
             avecFil,

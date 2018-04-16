@@ -8,9 +8,9 @@ namespace ProjetFinal.Models
 {
     public class Ecran : Item
     {
-        //public float Dimension { get; set; }
+        public DimmensionDisponible Dimension { get; set; }
 
-        public enum Dimension
+        public enum DimmensionDisponible
         {
             [Description("17 pouces")]
             dixSept,

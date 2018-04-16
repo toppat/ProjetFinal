@@ -8,7 +8,9 @@ namespace ProjetFinal.Models
 {
     public class Souris : Item
     {
-        public enum Categorie
+        public CategorieSouris Type { get; set; }
+
+        public enum CategorieSouris
         {
             [Description("Avec Fil")]
             avecFil,
