@@ -12,12 +12,12 @@ namespace ProjetFinal.Models
 
         public enum CategorieSouris
         {
-            [Description("Avec Fil")]
-            avecFil,
+            [Description("Filaire")]
+            filaire,
             [Description("Sans Fil")]
             sansFil,
-            [Description("De Jeu")]
-            deJeu,
+            [Description("Gamer")]
+            Gamer,
             [Description("Ergonomique")]
             ergonomique
         }
