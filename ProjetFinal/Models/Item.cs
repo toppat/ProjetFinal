@@ -11,7 +11,7 @@ namespace ProjetFinal.Models
         public TypeItem TypeCatego { get; set; }
 
         [Display(Name = "ID")]
-        public int Id { get; set; }
+        public int Id { get; set; } 
 
         [Required]
         [Range(0, double.PositiveInfinity)]
