@@ -10,6 +10,8 @@ namespace ProjetFinal.Models
 {
     public class OrdiPortable : Ordinateur
     {
+        //public Dimension DimensionEcran { get; set; }
+
         //Identification de variables
         public enum Dimension
         {

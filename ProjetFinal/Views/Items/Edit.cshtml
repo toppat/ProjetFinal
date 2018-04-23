@@ -11,9 +11,9 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Item</h4>
+        <h4>Item Catalogue</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -59,7 +59,19 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <br />
+</div>
+<div>
+    @Html.ActionLink("Retour à la Liste écran", "Index")
+</div>
+<div>
+    <br />
+</div>
+<div>
+    @Html.ActionLink("Retour aux Catalogue", "Index", "Items")
+</div>
+<div>
+    <br />
 </div>
 
 @section Scripts {

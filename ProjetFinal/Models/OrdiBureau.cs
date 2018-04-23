@@ -9,6 +9,8 @@ namespace ProjetFinal.Models
 {
     public class OrdiBureau : Ordinateur
     {
+        //public Boitier Format { get; set; }
+
         //Identification de variables
         public enum Boitier //• De bureau (ang. desktop) offre les moindres volumes et encombrements 
                             //• Tour il se décline en: • mini-tour ou demi-tour, moyenne-tour ou médium tour
@@ -25,6 +27,8 @@ namespace ProjetFinal.Models
             [Display(Name = "Micro-Tour")]
             microTour
         }
+
+       // public CarteMere MotherBoard { get; set; }
 
         public enum CarteMere //ATX / Micro ATX / Mini ITX
         {

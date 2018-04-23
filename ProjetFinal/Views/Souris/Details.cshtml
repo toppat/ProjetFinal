@@ -53,6 +53,12 @@
 
     </dl>
 </div>
+<div class="form-group" style="margin-bottom:80px">
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("Ajoute aux panier", "Index", "Paniers") <input type="submit" value="Ajout aux panier" class="btn btn-default" />
+    </div>
+</div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Retour à la Liste souris", "Index") |
