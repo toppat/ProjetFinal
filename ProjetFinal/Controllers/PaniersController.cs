@@ -11,108 +11,107 @@ using ProjetFinal.Models;
 
 namespace ProjetFinal.Controllers
 {
-    public class ClientsController : Controller
+    public class PaniersController : Controller
     {
         private ProjetFinalContexte db = new ProjetFinalContexte();
 
-        // GET: Clients
+        // GET: Paniers
         public ActionResult Index()
         {
-            return View(db.Clients.ToList());
+            return View(db.Paniers.ToList());
         }
 
-        // GET: Clients/Details/5
+        // GET: Paniers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Panier panier = db.Paniers.Find(id);
+            if (panier == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(panier);
         }
 
-        // GET: Clients/Create
+        // GET: Paniers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Clients/Create
+        // POST: Paniers/Create
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,Nom")] Client client)
+        public ActionResult Create([Bind(Include = "Id,Total")] Panier panier)
         {
             if (ModelState.IsValid)
             {
-                client.Panier = new Panier();
-                db.Clients.Add(client);
+                db.Paniers.Add(panier);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(client);
+            return View(panier);
         }
 
-        // GET: Clients/Edit/5
+        // GET: Paniers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Panier panier = db.Paniers.Find(id);
+            if (panier == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(panier);
         }
 
-        // POST: Clients/Edit/5
+        // POST: Paniers/Edit/5
         // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Email,Nom")] Client client)
+        public ActionResult Edit([Bind(Include = "Id,Total")] Panier panier)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(client).State = EntityState.Modified;
+                db.Entry(panier).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(client);
+            return View(panier);
         }
 
-        // GET: Clients/Delete/5
+        // GET: Paniers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Client client = db.Clients.Find(id);
-            if (client == null)
+            Panier panier = db.Paniers.Find(id);
+            if (panier == null)
             {
                 return HttpNotFound();
             }
-            return View(client);
+            return View(panier);
         }
 
-        // POST: Clients/Delete/5
+        // POST: Paniers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Client client = db.Clients.Find(id);
-            db.Clients.Remove(client);
+            Panier panier = db.Paniers.Find(id);
+            db.Paniers.Remove(panier);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

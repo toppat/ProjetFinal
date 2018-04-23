@@ -155,6 +155,7 @@
     <Compile Include="Controllers\ItemsController.cs" />
     <Compile Include="Controllers\OrdiBureauxController.cs" />
     <Compile Include="Controllers\OrdiPortablesController.cs" />
+    <Compile Include="Controllers\PaniersController.cs" />
     <Compile Include="Controllers\SourisController.cs" />
     <Compile Include="DAL\ProjetFinalContexte.cs" />
     <Compile Include="Controllers\HomeController.cs" />
