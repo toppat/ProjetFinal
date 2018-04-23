@@ -8,10 +8,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>OrdiBureau</h4>
         <hr />
@@ -81,7 +81,19 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <br />
+</div>
+<div>
+    @Html.ActionLink("Retour à la Liste Ecran", "Index")
+</div>
+<div>
+    <br />
+</div>
+<div>
+    @Html.ActionLink("Retour aux Catalogue", "Index", "Items")
+</div>
+<div>
+    <br />
 </div>
 
 @section Scripts {

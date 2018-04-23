@@ -11,7 +11,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>OrdiPortable</h4>
         <hr />
@@ -83,7 +83,19 @@
 }
 
 <div>
-    @Html.ActionLink("Retour a la Liste", "Index")
+    <br />
+</div>
+<div>
+    @Html.ActionLink("Retour à la Liste ordinateur portable", "Index")
+</div>
+<div>
+    <br />
+</div>
+<div>
+    @Html.ActionLink("Retour aux Catalogue", "Index", "Items")
+</div>
+<div>
+    <br />
 </div>
 
 @section Scripts {
