@@ -13,15 +13,15 @@ namespace ProjetFinal.Models
         public enum DimmensionDisponible
         {
             [Description("17 pouces")]
-            dixSept,
+            DixSeptPouces,
             [Description("19 pouces")]
-            dixNeuf,
+            DixNeufPouces,
             [Description("20 pouces")]
-            vingt,
+            VingtPouces,
             [Description("21 pouces")]
-            vingtUn,
+            VingtUnPouces,
             [Description("24 pouces")]
-            vingtQuatre,
+            VingtQuatrePouces,
         }
         public Ecran()
         {

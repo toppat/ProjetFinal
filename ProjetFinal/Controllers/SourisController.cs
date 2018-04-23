@@ -47,7 +47,7 @@ namespace ProjetFinal.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Categorie,Prix,Nom,Description")] Souris souris)
+        public ActionResult Create([Bind(Include = "Id,Type,Prix,Nom,Description")] Souris souris)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace ProjetFinal.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Categorie,Prix,Nom,Description")] Souris souris)
+        public ActionResult Edit([Bind(Include = "Id,Categorie,Type,Prix,Nom,Description")] Souris souris)
         {
             if (ModelState.IsValid)
             {

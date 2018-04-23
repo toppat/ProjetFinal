@@ -39,7 +39,7 @@ namespace ProjetFinal.Controllers
         // GET: Claviers/Create
         public ActionResult Create()
         {
-            return View();
+            return View(new Clavier());
         }
 
         // POST: Claviers/Create
@@ -47,7 +47,7 @@ namespace ProjetFinal.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TypeCatego,Prix,Nom,Description")] Clavier clavier)
+        public ActionResult Create([Bind(Include = "Id,Type,Prix,Nom,Description")] Clavier clavier)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace ProjetFinal.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TypeCatego,Prix,Nom,Description")] Clavier clavier)
+        public ActionResult Edit([Bind(Include = "Id,TypeCatego,Type,Prix,Nom,Description")] Clavier clavier)
         {
             if (ModelState.IsValid)
             {
