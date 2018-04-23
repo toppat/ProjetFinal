@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -12,15 +13,15 @@ namespace ProjetFinal.Models
 
         public enum DimmensionDisponible
         {
-            [Description("17 pouces")]
+            [Display(Name = "17 pouces")]
             DixSeptPouces,
-            [Description("19 pouces")]
+            [Display(Name = "19 pouces")]
             DixNeufPouces,
-            [Description("20 pouces")]
+            [Display(Name = "20 pouces")]
             VingtPouces,
-            [Description("21 pouces")]
+            [Display(Name = "21 pouces")]
             VingtUnPouces,
-            [Description("24 pouces")]
+            [Display(Name = "24 pouces")]
             VingtQuatrePouces,
         }
         public Ecran()

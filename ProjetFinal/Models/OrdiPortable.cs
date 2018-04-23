@@ -13,17 +13,17 @@ namespace ProjetFinal.Models
         //Identification de variables
         public enum Dimension
         {
-            [Description("13 pouces")]
+            [Display(Name = "13 pouces")]
             treize,
-            [Description("14 pouces")]
+            [Display(Name = "14 pouces")]
             quatorze,
-            [Description("15 pouces")]
+            [Display(Name = "15 pouces")]
             quinze,
-            [Description("15.4 pouces")]
+            [Display(Name = "15.4 pouces")]
             quinzeQuatre,
-            [Description("15.6 pouces")]
+            [Display(Name = "15.6 pouces")]
             quinzeSix,
-            [Description("17 pouces")]
+            [Display(Name = "17 pouces")]
             dixSept
         }
 

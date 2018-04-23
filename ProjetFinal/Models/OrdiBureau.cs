@@ -14,15 +14,15 @@ namespace ProjetFinal.Models
                             //• Tour il se décline en: • mini-tour ou demi-tour, moyenne-tour ou médium tour
                             //• tour ou maxi-tour, ou grande tour(plus grande volume pour l’extensions) • micro-tour 
         {
-            [Description("Bureau")]
+            [Display(Name = "Bureau")]
             bureau,
-            [Description("Grande-Tour")]
+            [Display(Name = "Grande-Tour")]
             grandeTour,
-            [Description("Demi-Tour")]
+            [Display(Name = "Demi-Tour")]
             demiTour,
-            [Description("Mini-Tour")]
+            [Display(Name = "Mini-Tour")]
             miniTour,
-            [Description("Micro-Tour")]
+            [Display(Name = "Micro-Tour")]
             microTour
         }
 

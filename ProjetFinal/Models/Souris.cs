@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -12,13 +13,13 @@ namespace ProjetFinal.Models
 
         public enum CategorieSouris
         {
-            [Description("Filaire")]
+            [Display(Name = "Filaire")]
             filaire,
-            [Description("Sans Fil")]
+            [Display(Name = "Sans Fil")]
             sansFil,
-            [Description("Gamer")]
+            [Display(Name = "Gamer")]
             Gamer,
-            [Description("Ergonomique")]
+            [Display(Name = "Ergonomique")]
             ergonomique
         }
         public Souris()

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -12,13 +13,13 @@ namespace ProjetFinal.Models
 
         public enum CategorieClavier
         {
-            [Description("Avec Fil")]
+            [Display(Name = "Avec Fil")]
             avecFil,
-            [Description("Sans Fil")]
+            [Display(Name = "Sans Fil")]
             sansFil,
-            [Description("De Jeu")]
+            [Display(Name = "De Jeu")]
             deJeu,
-            [Description("Ergonomique")]
+            [Display(Name = "Ergonomique")]
             ergonomique
         }
         public Clavier()
