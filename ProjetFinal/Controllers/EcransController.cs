@@ -47,7 +47,7 @@ namespace ProjetFinal.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,TypeCatego,Prix,Nom,Description")] Ecran ecran)
+        public ActionResult Create([Bind(Include = "Id,Dimension,Prix,Nom,Description")] Ecran ecran)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace ProjetFinal.Controllers
         // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,TypeCatego,Prix,Nom,Description")] Ecran ecran)
+        public ActionResult Edit([Bind(Include = "Id,TypeCatego,Dimension,Prix,Nom,Description")] Ecran ecran)
         {
             if (ModelState.IsValid)
             {
