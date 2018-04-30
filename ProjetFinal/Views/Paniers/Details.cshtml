@@ -10,6 +10,23 @@
     <h4>Panier</h4>
     <hr />
     <dl class="dl-horizontal">
+        @foreach (var panierItem in Model.Items)
+        {
+            <dt>
+                Nom
+            </dt>
+
+            <dd>
+                @panierItem.Item.Nom
+            </dd>
+            <dt>
+                Quantité
+            </dt>
+
+            <dd>
+                @panierItem.Qty
+            </dd>
+        }
         <dt>
             @Html.DisplayNameFor(model => model.Total)
         </dt>

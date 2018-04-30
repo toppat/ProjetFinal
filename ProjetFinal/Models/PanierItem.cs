@@ -8,10 +8,13 @@ namespace ProjetFinal.Models
 {
     public class PanierItem
     {
+        [Display(Name = "ID")]
+        public int ID { get; set; }
+
         [Display(Name = "Quantity")]
         public int Qty { get; set; }
 
         [Display(Name = "Item")]
-        public Item Item{ get; set; }
+        public virtual Item Item{ get; set; }
     }
 }

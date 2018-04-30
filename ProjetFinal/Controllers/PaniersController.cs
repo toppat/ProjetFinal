@@ -59,6 +59,47 @@ namespace ProjetFinal.Controllers
             return View(panier);
         }
 
+        //Ajoute un item dans le panier
+        public ActionResult AddItem(int idItem)
+        {
+            Item item = db.Items.Find(idItem);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            String DropDownValue = Request.Form.Get("DropDownlistClient");
+            if (String.IsNullOrEmpty(DropDownValue))
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            int IdClient = int.Parse(DropDownValue);
+            Client client = db.Clients.Find(IdClient);
+            if (client == null)
+            {
+                return HttpNotFound();
+            }
+
+            PanierItem Panieritem = client.Panier.Items.Find(PanierItem => PanierItem.Item.Id == idItem);
+
+            if (Panieritem == null)
+            {
+                Panieritem = new PanierItem {
+                    Item = item,
+                    Qty = 1
+                };
+                client.Panier.Items.Add(Panieritem);
+            }
+            else
+            {
+                client.Panier.Items.Find(PanierItem => PanierItem.Item.Id == idItem).Qty++;
+            }
+
+            db.Entry(client.Panier).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return RedirectToAction("Details", new { Id = idItem });
+        }
         // GET: Paniers/Edit/5
         public ActionResult Edit(int? id)
         {

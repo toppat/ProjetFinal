@@ -51,7 +51,9 @@ namespace ProjetFinal.Controllers
         {
             if (ModelState.IsValid)
             {
-                client.Panier = new Panier();
+                client.Panier = new Panier {
+                    Items = new List<PanierItem>()
+                };
                 db.Clients.Add(client);
                 db.SaveChanges();
                 return RedirectToAction("Index");

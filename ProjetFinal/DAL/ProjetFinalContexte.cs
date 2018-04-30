@@ -21,6 +21,6 @@ namespace ProjetFinal.DAL
         public DbSet<Souris> Souris { get; set; }
         public DbSet<Clavier> Claviers { get; set; }
         public DbSet<CompteUtilisateur> CompteUtilisateurs { get; set; }
-        public DbSet<PanierItem> panierItems { get; set; }
+        public DbSet<PanierItem> PanierItems { get; set; }
     }
 }
