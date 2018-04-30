@@ -11,8 +11,9 @@ namespace ProjetFinal.Models
     {
         [Display(Name = "ID")]
         public int Id { get; set; }
-
-        [StringLength(50)]
+        
+        [Required(ErrorMessage = "L'adresse courriel est requis")]
+        [EmailAddress(ErrorMessage = "L'adresse courriel est invalide")]
         [Display(Name = "Email")]
         public string Email { get; set; }
 
