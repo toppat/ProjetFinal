@@ -162,13 +162,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201804161320263_Initiale.cs" />
-    <Compile Include="Migrations\201804161320263_Initiale.Designer.cs">
-      <DependentUpon>201804161320263_Initiale.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201804161343554_CategorieSourisClavier.cs" />
-    <Compile Include="Migrations\201804161343554_CategorieSourisClavier.Designer.cs">
-      <DependentUpon>201804161343554_CategorieSourisClavier.cs</DependentUpon>
+    <Compile Include="Migrations\201804301400386_PanierItems.cs" />
+    <Compile Include="Migrations\201804301400386_PanierItems.Designer.cs">
+      <DependentUpon>201804301400386_PanierItems.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrateur.cs" />
@@ -291,11 +287,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804161320263_Initiale.resx">
-      <DependentUpon>201804161320263_Initiale.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201804161343554_CategorieSourisClavier.resx">
-      <DependentUpon>201804161343554_CategorieSourisClavier.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804301400386_PanierItems.resx">
+      <DependentUpon>201804301400386_PanierItems.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

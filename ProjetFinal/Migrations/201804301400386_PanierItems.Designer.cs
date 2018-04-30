@@ -7,13 +7,13 @@ namespace ProjetFinal.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CategorieSourisClavier : IMigrationMetadata
+    public sealed partial class PanierItems : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CategorieSourisClavier));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(PanierItems));
         
         string IMigrationMetadata.Id
         {
-            get { return "201804161343554_CategorieSourisClavier"; }
+            get { return "201804301400386_PanierItems"; }
         }
         
         string IMigrationMetadata.Source

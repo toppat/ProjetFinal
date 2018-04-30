@@ -33,6 +33,7 @@ namespace ProjetFinal.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.client = db.Clients.ToList();
             return View(item);
         }
 
@@ -58,7 +59,7 @@ namespace ProjetFinal.Controllers
 
             return View(item);
         }
-
+        
         // GET: Items/Edit/5                           
         public ActionResult Edit(int? id)
         {
