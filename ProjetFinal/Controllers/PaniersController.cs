@@ -98,7 +98,7 @@ namespace ProjetFinal.Controllers
             db.Entry(client.Panier).State = EntityState.Modified;
             db.SaveChanges();
 
-            return RedirectToAction("Details", new { Id = idItem });
+            return RedirectToAction("Details", new { Id = client.Panier.Id });
         }
         // GET: Paniers/Edit/5
         public ActionResult Edit(int? id)
