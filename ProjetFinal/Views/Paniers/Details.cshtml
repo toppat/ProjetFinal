@@ -19,12 +19,23 @@
             <dd>
                 @panierItem.Item.Nom
             </dd>
+
+            <dt>
+                Prix
+            </dt>
+
+            <dd>
+                @panierItem.Item.Prix
+            </dd>
+
             <dt>
                 Quantité
             </dt>
 
             <dd>
                 @panierItem.Qty
+                @Html.ActionLink("+", "ModifierQty", new { IdPanierItem = panierItem.ID, IdPanier = Model.Id, QtyModif = 1 })
+                @Html.ActionLink("-", "ModifierQty", new { IdPanierItem = panierItem.ID, IdPanier = Model.Id, QtyModif = -1 })
             </dd>
         }
         <dt>
@@ -41,3 +52,9 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Retour aux panier", "Index")
 </p>
+<div>
+    @Html.ActionLink("Retour aux Catalogue", "Index", "Items")
+</div>
+<div>
+    <br />
+</div>

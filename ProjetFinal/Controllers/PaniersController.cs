@@ -92,44 +92,72 @@ namespace ProjetFinal.Controllers
             }
             else
             {
-                client.Panier.Items.Find(PanierItem => PanierItem.Item.Id == idItem).Qty++;
+                Panieritem.Qty++;
             }
+
+            decimal total = 0;
+            foreach (PanierItem pi in client.Panier.Items)    //meilleur dans Commande
+            {
+                total += pi.Item.Prix * pi.Qty;
+            }
+            client.Panier.Total = total;
 
             db.Entry(client.Panier).State = EntityState.Modified;
             db.SaveChanges();
 
             return RedirectToAction("Details", new { Id = idItem });
         }
-        // GET: Paniers/Edit/5
-        public ActionResult Edit(int? id)
+
+        public ActionResult ModifierQty(int IdPanierItem, int IdPanier, int QtyModif )
         {
-            if (id == null)
+            Panier panier = db.Paniers.Find(IdPanier);
+            PanierItem panierItem = panier.Items.Find(Pi => Pi.ID == IdPanierItem);
+            if (panierItem.Qty + QtyModif > 0)
+                panierItem.Qty += QtyModif;
+
+            decimal total = 0;
+            foreach (PanierItem pi in panier.Items)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                total += pi.Item.Prix * pi.Qty;
             }
-            Panier panier = db.Paniers.Find(id);
-            if (panier == null)
-            {
-                return HttpNotFound();
-            }
-            return View(panier);
+            panier.Total = total;
+
+            db.Entry(panier).State = EntityState.Modified;
+            db.SaveChanges();
+
+            return RedirectToAction("Details", new { Id = IdPanier });
         }
 
-        // POST: Paniers/Edit/5
-        // Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
-        // plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Total")] Panier panier)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(panier).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(panier);
-        }
+        //// GET: Paniers/Edit/5
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Panier panier = db.Paniers.Find(id);
+        //    if (panier == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(panier);
+        //}
+
+        //// POST: Paniers/Edit/5
+        //// Afin de déjouer les attaques par sur-validation, activez les propriétés spécifiques que vous voulez lier. Pour 
+        //// plus de détails, voir  https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit([Bind(Include = "Id,Total")] Panier panier)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(panier).State = EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+        //    return View(panier);
+        //}
 
         // GET: Paniers/Delete/5
         public ActionResult Delete(int? id)
