@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201804301400386_PanierItems.Designer.cs">
       <DependentUpon>201804301400386_PanierItems.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804302021226_emailconfirm.cs" />
+    <Compile Include="Migrations\201804302021226_emailconfirm.Designer.cs">
+      <DependentUpon>201804302021226_emailconfirm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrateur.cs" />
     <Compile Include="Models\Clavier.cs" />
@@ -286,6 +290,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804301400386_PanierItems.resx">
       <DependentUpon>201804301400386_PanierItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804302021226_emailconfirm.resx">
+      <DependentUpon>201804302021226_emailconfirm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
