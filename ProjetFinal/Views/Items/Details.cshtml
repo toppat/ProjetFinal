@@ -3,7 +3,7 @@
 
 @{
     ViewBag.Title = "Details";
-    SelectList selectListClients = new SelectList(ViewBag.client,"Id","Nom");
+    SelectList selectListClients = new SelectList(ViewBag.client, "Id", "Nom");
 }
 
 <h2>Details</h2>
@@ -45,12 +45,21 @@
         </dd>
 
     </dl>
-    @using (Html.BeginForm("AddItem", "Paniers", new { idItem = Model.Id }, FormMethod.Post, null))
-    {
-        @Html.DropDownList("DropDownlistClient", selectListClients, "Selectionner un Client", new { @class = "form-control" })
-        <button type="submit" class="btn btn-success">Ajouter</button>
-    }
 </div>
+
+@using (Html.BeginForm("AddItem", "Paniers", new { idItem = Model.Id }, FormMethod.Post, null))
+{
+    <div class="form-group">
+        <div class=" col-md-5">
+            <div class="input-group">
+                @Html.DropDownList("DropDownlistClient", selectListClients, "Selectionner un Client", new { @class = "form-control" })
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btn-success">Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
