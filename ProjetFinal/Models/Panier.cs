@@ -12,9 +12,20 @@ namespace ProjetFinal.Models
         public int Id { get; set; }
 
         [Display(Name = "Liste d'items")]
-        public virtual List<Item> Items { get; set; }
+        public virtual List<PanierItem> Items { get; set; }
 
         [Display(Name = "Le total")]
         public decimal Total { get; set; }
     }
 }
+
+
+
+//PanierItems i = List.find(NetPipeStyleUriParser.item.id==itemID)
+    //if (i==null)
+    //new PanierItem(......)
+
+//@html.DropDownList("Nom", SelectList, "Selectionner un client", HtmlAttributes)
+// new SelectList(ListeClients, "id", "Nom")
+
+
