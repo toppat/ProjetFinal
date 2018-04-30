@@ -105,7 +105,7 @@ namespace ProjetFinal.Controllers
             db.Entry(client.Panier).State = EntityState.Modified;
             db.SaveChanges();
 
-            return RedirectToAction("Details", new { Id = idItem });
+            return RedirectToAction("Details", new { Id = client.Panier.Id });
         }
 
         public ActionResult ModifierQty(int IdPanierItem, int IdPanier, int QtyModif )
