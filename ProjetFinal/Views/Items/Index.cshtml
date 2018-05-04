@@ -7,57 +7,65 @@
 
 <h2>Catalogue</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.TypeCatego)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Prix)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    String nomControleur = item.GetType().Name ;
-    if (nomControleur == typeof(OrdiBureau).Name)
-    {
-        nomControleur += "x";
-    }
-    else if (nomControleur != typeof(Souris).Name)
-    {
-        nomControleur += "s";
-    }
-
-
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TypeCatego)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Prix)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", nomControleur, new { id=item.Id }, null) |
-            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@using (Html.BeginForm("Index", "Items", FormMethod.Get))
+{
+    <p style="display:inline-flex">
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control" })
+        <input type="submit" class="btn" value="Rechercher" />
+    </p>
 }
+    <p>
+        @Html.ActionLink("Créer nouveau", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeCatego)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th></th>
+        </tr>
 
-</table>
+        @foreach (var item in Model)
+        {
+            String nomControleur = item.GetType().Name;
+            if (nomControleur == typeof(OrdiBureau).Name)
+            {
+                nomControleur += "x";
+            }
+            else if (nomControleur != typeof(Souris).Name)
+            {
+                nomControleur += "s";
+            }
+
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeCatego)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prix)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", nomControleur, new { id = item.Id }, null) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>

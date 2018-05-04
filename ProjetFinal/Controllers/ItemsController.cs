@@ -16,13 +16,46 @@ namespace ProjetFinal.Controllers
         private ProjetFinalContexte db = new ProjetFinalContexte();
 
         // GET: Items
-        public ActionResult Index()
+        public ActionResult Index(String searchString)
         {
-            return View(db.Items.ToList());
+            ViewBag.CurrentFilter = searchString;
+            var items = from i in db.Items
+                select i;
+             if (!String.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(i => i.Nom.ToLower().Contains(searchString.ToLower()) || i.Description.ToLower().Contains(searchString.ToLower()));
+            }
+            return View(items.ToList());
         }
 
-        // GET: Items/Details/5
-        public ActionResult Details(int? id)
+        //// Search
+        //ViewBag.CurrentFilter = searchString;
+
+        //    var students = from s in db.Students
+        //                   select s;
+        //    if (!String.IsNullOrEmpty(searchString))
+        //    {
+        //        students = students.Where(s => s.LastName.Contains(searchString)
+        //                               || s.FirstMidName.Contains(searchString));
+        //    }
+        //    switch (sortOrder)
+        //    {
+        //        case "name_desc":
+        //            students = students.OrderByDescending(s => s.LastName);
+        //            break;
+        //        case "Date":
+        //            students = students.OrderBy(s => s.EnrollmentDate);
+        //            break;
+        //        case "date_desc":
+        //            students = students.OrderByDescending(s => s.EnrollmentDate);
+        //            break;
+        //        default:  // Name ascending 
+        //            students = students.OrderBy(s => s.LastName);
+        //            break;
+        //    }
+
+// GET: Items/Details/5
+public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -117,7 +150,7 @@ namespace ProjetFinal.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
