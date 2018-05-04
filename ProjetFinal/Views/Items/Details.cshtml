@@ -52,7 +52,7 @@
     <div class="form-group">
         <div class=" col-md-5">
             <div class="input-group">
-                @Html.DropDownList("DropDownlistClient", selectListClients, "Selectionner un Client", new { @class = "form-control" })
+                @Html.DropDownList("DropDownlistClient", selectListClients, "Selectionner un Client", new { @class = "form-control", required = "required" })
                 <div class="input-group-btn">
                     <button type="submit" class="btn btn-success">Ajouter</button>
                 </div>
