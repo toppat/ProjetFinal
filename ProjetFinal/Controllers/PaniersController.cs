@@ -18,7 +18,14 @@ namespace ProjetFinal.Controllers
         // GET: Paniers
         public ActionResult Index()
         {
-            return View(db.Paniers.ToList());
+            List<Panier> listPanier = db.Paniers.ToList();
+            List<Client> listClient = new List<Client>();
+            foreach (Panier panier in listPanier)
+            {
+                listClient.Add(db.Clients.Where(c => c.Panier.Id == panier.Id).SingleOrDefault());
+            }
+            ViewBag.listeclient = listClient;
+            return View(listPanier);
         }
 
         // GET: Paniers/Details/5

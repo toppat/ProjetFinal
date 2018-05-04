@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Panier";
+    List<ProjetFinal.Models.Client> listClient = ViewBag.listeclient;
 }
 
 <h2>Panier</h2>
@@ -12,20 +13,28 @@
 <table class="table">
     <tr>
         <th>
+            Nom du client
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Total)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@for (int i = 0; i < Model.Count(); i++ ) {
+    var panier = Model.ElementAt(i);
+    var client = listClient.ElementAt(i);
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Total)
+            @client.Nom
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => panier.Total)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |*@
+            @Html.ActionLink("Details", "Details", new { id = panier.Id }) @*|
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
         </td>
     </tr>
 }
